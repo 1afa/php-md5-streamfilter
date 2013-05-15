@@ -13,10 +13,12 @@ GPL version 3.
 
 ## Usage example
 
+    <?php
+
     require_once 'streamfilter.md5.php';
 
     // Setup code, acquire a stream in $fd:
-    $fd = fopen('test.txt');
+    $fd = fopen('test.txt', 'r');
 
     // Register stream filter, append to filter chain:
     stream_filter_register('md5sum', 'md5sum_filter');
@@ -28,5 +30,5 @@ GPL version 3.
 
     // Remove filter, close handle, print hash:
     stream_filter_remove($md5_filter);
-    close($fd);
-    echo "MD5: " . md5s_get_hash();
+    fclose($fd);
+    printf("MD5: %s\n", md5s_get_hash());
