@@ -8,27 +8,29 @@ filter to the stream, process the stream, and when you're done, call
 
 This code is licensed under the [New BSD
 license](http://opensource.org/licenses/BSD-3-Clause). The same code can also
-be found in the Webfolders package, where it is licensed under the GNU Affero
-GPL version 3.
+be [found in the SambaDAV repository](https://github.com/bokxing-it/sambadav/blob/master/src/include/streamfilter.md5.php),
+where it is licensed under the GNU Affero GPL version 3.
 
 ## Usage example
 
-    <?php
+```php
+<?php
 
-    require_once 'streamfilter.md5.php';
+require_once 'streamfilter.md5.php';
 
-    // Setup code, acquire a stream in $fd:
-    $fd = fopen('test.txt', 'r');
+// Setup code, acquire a stream in $fd:
+$fd = fopen('test.txt', 'r');
 
-    // Register stream filter, append to filter chain:
-    stream_filter_register('md5sum', 'md5sum_filter');
-    $md5_filter = stream_filter_append($fd, 'md5sum');
+// Register stream filter, append to filter chain:
+stream_filter_register('md5sum', 'md5sum_filter');
+$md5_filter = stream_filter_append($fd, 'md5sum');
 
-    // Dummy file read, just to get the data flowing;
-    // in reality this might be a stream_copy_to_stream() invocation:
-    while (fread($fd, 5000000));
+// Dummy file read, just to get the data flowing;
+// in reality this might be a stream_copy_to_stream() invocation:
+while (fread($fd, 5000000));
 
-    // Remove filter, close handle, print hash:
-    stream_filter_remove($md5_filter);
-    fclose($fd);
-    printf("MD5: %s\n", md5s_get_hash());
+// Remove filter, close handle, print hash:
+stream_filter_remove($md5_filter);
+fclose($fd);
+printf("MD5: %s\n", md5s_get_hash());
+```
