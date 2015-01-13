@@ -6,10 +6,12 @@ filter to the stream, process the stream, and when you're done, call
 
 ## License
 
-This code is licensed under the [New BSD
-license](http://opensource.org/licenses/BSD-3-Clause). The same code can also
-be [found in the SambaDAV repository](https://github.com/bokxing-it/sambadav/blob/master/src/include/streamfilter.md5.php),
-where it is licensed under the GNU Affero GPL version 3.
+This code is licensed under the [New BSD license](http://opensource.org/licenses/BSD-3-Clause).
+It was forked from code in the [SambaDAV repository]
+(https://github.com/1afa/sambadav/blob/master/src/include/streamfilter.md5.php),
+where it was licensed under the GNU Affero GPL version 3.
+This software is not actively maintained. It should do what it is supposed to do.
+Feel free to fork and improve on it.
 
 ## Usage example
 
