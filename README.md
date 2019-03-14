@@ -1,3 +1,5 @@
+**Note:** This software is no longer maintained. It should do what it is supposed to do. Feel free to fork and improve on it.
+
 # php-md5-streamfilter
 
 A simple stream filter to calculate the MD5 hash of a PHP stream. Attach the
@@ -10,8 +12,6 @@ This code is licensed under the [New BSD license](http://opensource.org/licenses
 It was forked from code in the [SambaDAV repository]
 (https://github.com/1afa/sambadav/blob/master/src/include/streamfilter.md5.php),
 where it was licensed under the GNU Affero GPL version 3.
-This software is not actively maintained. It should do what it is supposed to do.
-Feel free to fork and improve on it.
 
 ## Usage example
 
